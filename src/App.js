@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
-function App() {
+import { selectCurrentUser } from "./redux/user/user.selectors";
+import { fetchMusicDataStart } from "./redux/music-data/music-data.actions";
+
+import WelcomePage from "./pages/welcome/welcome.component";
+import HomePage from "./pages/home/home.component";
+
+import "./App.css";
+
+function App({ currentUser, fetchMusicDataStart }) {
+  useEffect(() => {
+    fetchMusicDataStart(currentUser.genre);
+  }, [fetchMusicDataStart, currentUser]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Switch>
+        <Route exact path="/" component={WelcomePage} />
+        <Route
+          path="/home"
+          render={() => (!currentUser ? <Redirect to="/" /> : <HomePage />)}
+        />
+      </Switch>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchMusicDataStart: (searchQuery) =>
+    dispatch(fetchMusicDataStart(searchQuery)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
