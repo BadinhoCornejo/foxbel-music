@@ -6,6 +6,7 @@ export const HomeContainer = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 100%;
   }
+  overflow-y: hidden;
 `;
 
 export const SidebarContainer = styled.div`

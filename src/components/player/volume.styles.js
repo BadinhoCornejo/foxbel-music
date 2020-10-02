@@ -25,6 +25,7 @@ export const VolumeContainer = styled.div`
     -webkit-appearance: none;
     margin: 10px 0;
     width: 100px;
+    background: inherit;
     @media (max-width: 768px) {
       width: 70px;
     }
@@ -63,16 +64,16 @@ export const VolumeContainer = styled.div`
     cursor: pointer;
     animate: 0.2s;
     box-shadow: 0px 0px 0px #662323;
-    background: #662323;
+    background: #fff;
     border-radius: 5px;
   }
 
   input[type="range"]::-moz-range-thumb {
     box-shadow: 0px 0px 1px #662323;
     height: 13px;
-    width: 4px;
+    width: 13px;
     border-radius: 50%;
-    background: #662323;
+    background: #fff;
     cursor: pointer;
   }
 

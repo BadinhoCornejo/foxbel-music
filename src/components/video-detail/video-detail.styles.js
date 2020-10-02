@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const VideoDetailContainer = styled.div`
-  width: 1120px;
+  width: calc(100% - 30px);
   height: 280px;
   display: grid;
   grid-template-columns: 250px auto;
@@ -17,7 +17,7 @@ export const VideoDetailContainer = styled.div`
 
 export const AlbumCover = styled.div`
   width: 100%;
-  height: auto;
+  height: 280px;
   cursor: pointer;
   position: relative;
 `;
