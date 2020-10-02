@@ -10,6 +10,7 @@ export const VolumeContainer = styled.div`
   i {
     color: #fff;
     font-size: 20px;
+    cursor: pointer;
   }
 
   @media (max-width: 768px) {

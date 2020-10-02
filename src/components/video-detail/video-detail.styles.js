@@ -28,12 +28,11 @@ export const DetailContainer = styled.div`
   font-family: "Quicksand";
   padding: 4rem 4rem 2rem 2rem;
 
-  background: linear-gradient(rgba(167, 0, 0, 0.7), rgba(167, 0, 0, 0.7)),
+  background: linear-gradient(rgba(167, 0, 0, 0.8), rgba(167, 0, 0, 0.8)),
     url(${(props) => props.cover_big});
   background-size: cover;
   background-position: center;
   position: relative;
-  opacity: 0.5;
 `;
 
 export const AboutContainer = styled.div`

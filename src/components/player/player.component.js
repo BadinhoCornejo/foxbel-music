@@ -97,7 +97,16 @@ const Player = ({ currentSong }) => {
           onChange={(event) => handleVolume(event.target.value / 100)}
         />
 
-        <i className="fas fa-volume-down"></i>
+        <i
+          className="fas fa-volume-down"
+          onClick={() => {
+            if (volume <= 0.5) {
+              handleVolume(1);
+            } else {
+              handleVolume(0);
+            }
+          }}
+        ></i>
       </VolumeContainer>
     </PlayerContainer>
   );
