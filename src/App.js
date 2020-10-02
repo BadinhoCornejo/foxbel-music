@@ -13,7 +13,7 @@ import "./App.css";
 
 function App({ currentUser, fetchMusicDataStart }) {
   useEffect(() => {
-    fetchMusicDataStart(currentUser.genre);
+    if (currentUser) fetchMusicDataStart(currentUser.genre);
   }, [fetchMusicDataStart, currentUser]);
 
   return (
