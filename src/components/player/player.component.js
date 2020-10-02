@@ -6,16 +6,17 @@ import { selectCurrentSong } from "../../redux/song/song.selectors";
 
 import {
   PlayerContainer,
-  ControlsContainer,
   NoSong,
   Song,
   CoverSong,
   SongInfo,
 } from "./player.styles";
 import { VolumeContainer } from "./volume.styles";
+import { ControlsContainer } from "./controls.styles";
 
 const Player = ({ currentSong }) => {
   const [playing, setPlaying] = useState(false);
+  const [playInit, setPlayInit] = useState(false);
   const [volume, setVolume] = useState(0.5);
 
   const audio = useRef("audio_tag");
@@ -49,7 +50,8 @@ const Player = ({ currentSong }) => {
   };
 
   useEffect(() => {
-    if (currentSong && playing) toggleAudio();
+    setPlayInit(true);
+    if (currentSong && playInit) toggleAudio();
   }, [currentSong]);
 
   return (

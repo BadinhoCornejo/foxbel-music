@@ -6,6 +6,13 @@ export const VideoDetailContainer = styled.div`
   display: grid;
   grid-template-columns: 250px auto;
   color: #fff;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+  }
 `;
 
 export const AlbumCover = styled.div`
@@ -66,6 +73,7 @@ export const Story = styled.p`
 `;
 
 export const ActionsContainer = styled.div`
+  width: 180px;
   display: flex;
   justify-content: space-between;
 `;

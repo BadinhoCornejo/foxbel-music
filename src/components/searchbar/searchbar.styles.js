@@ -11,13 +11,13 @@ export const SearchbarContainer = styled.div`
   border-radius: 100px;
   border: solid 1px #828282;
 
-  @media (max-width: 1040px){
+  @media (max-width: 1040px) {
     width: auto;
   }
 
   i {
     margin-right: 9px;
-    color: #BDBDBD;
+    color: #bdbdbd;
   }
 `;
 

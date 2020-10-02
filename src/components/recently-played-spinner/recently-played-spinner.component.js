@@ -16,8 +16,8 @@ const RecentlyPlayedSpinner = (WrappedComponent) => ({
     <SpinnerContainer>
       <Skeleton width={890} height={250} />
       <ResultsContainer>
-        {resultsCount.map((i) => (
-          <ResultsContainer>
+        {resultsCount.map((i, idx) => (
+          <ResultsContainer key={idx}>
             <Skeleton width={180} height={180} />
             <Skeleton count={2} />
           </ResultsContainer>

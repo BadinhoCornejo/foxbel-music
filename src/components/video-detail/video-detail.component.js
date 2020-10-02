@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { setCurrentSong } from "../../redux/song/song.actions";
 
 import Cover from "../cover/cover.component";
+import PrimaryButton from "../primary-button/primary-button.component";
+import SecondaryButton from "../secondary-button/secondary-button.component";
 
 import {
   VideoDetailContainer,
@@ -55,7 +57,10 @@ const VideoDetail = ({
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s.
         </Story>
-        <ActionsContainer>button button dots</ActionsContainer>
+        <ActionsContainer>
+          <PrimaryButton onClick={handleSong}>Reproducir</PrimaryButton>
+          <SecondaryButton>Seguir</SecondaryButton>
+        </ActionsContainer>
       </DetailContainer>
     </VideoDetailContainer>
   );

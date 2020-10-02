@@ -9,12 +9,17 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  h2{
-    font-family: 'Quicksand';
+  @media (max-width: 768px) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  h2 {
+    font-family: "Quicksand";
     font-weight: bold;
     font-size: 22px;
     line-height: 27px;
-    color: #E86060;
+    color: #e86060;
 
     padding-top: 8px;
     padding-bottom: 8px;
@@ -23,4 +28,5 @@ export const Container = styled.div`
 
 export const CollectionContainer = styled(Collection)`
   padding-left: 4rem;
+  position: inherit;
 `;

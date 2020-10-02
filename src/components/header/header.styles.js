@@ -5,6 +5,10 @@ export const HeaderContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin: 40px;
+
+  @media (max-width: 1040px) {
+    margin: 8px;
+  }
 `;
 
 export const UserContainer = styled.div`

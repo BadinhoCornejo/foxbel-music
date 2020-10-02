@@ -6,15 +6,28 @@ export const VolumeContainer = styled.div`
   align-items: center;
   width: 140px;
   margin-right: 40px;
+
   i {
     color: #fff;
     font-size: 20px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100px;
+    margin-right: 10px;
+    margin-left: 10px;
+    i {
+      font-size: 16px;
+    }
   }
 
   input[type="range"] {
     -webkit-appearance: none;
     margin: 10px 0;
     width: 100px;
+    @media (max-width: 768px) {
+      width: 70px;
+    }
   }
 
   input[type="range"]:focus {

@@ -23,6 +23,7 @@ export function* fetchMusicDataAsync({ payload }) {
   const defaultData = {
     data: { data: [] },
   };
+  
   try {
     if (payload.length) {
       const data = yield call(getMusicData, payload);

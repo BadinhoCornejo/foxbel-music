@@ -14,7 +14,7 @@ const RecentlyPlayed = ({ collections }) => {
   const [videoDetailProps, setVideoDetailProps] = useState({});
 
   useEffect(() => {
-    if (collections && collections.data.length) {
+    if (collections && collections.data && collections.data.length) {
       setDataExists(true);
       const {
         album,
