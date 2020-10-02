@@ -13,3 +13,8 @@ export const SidebarContainer = styled.div`
     display: none;
   }
 `;
+
+export const Container = styled.div`
+  width: 100%;
+  margin-bottom: 7rem;
+`;

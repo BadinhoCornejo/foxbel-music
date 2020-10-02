@@ -1,10 +1,11 @@
 import React from "react";
 
 import Sidebar from "../../components/sidebar/sidebar.component";
-import RecentlyPlayed from "../../components/recently-played/recently-played.component";
+import Player from "../../components/player/player.component";
+import RecentlyPlayedContainer from "../../components/recently-played/recently-played.container";
 import Header from "../../components/header/header.component";
 
-import { HomeContainer, SidebarContainer } from "./home.styles";
+import { HomeContainer, SidebarContainer, Container } from "./home.styles";
 
 const HomePage = () => {
   return (
@@ -12,10 +13,11 @@ const HomePage = () => {
       <SidebarContainer>
         <Sidebar />
       </SidebarContainer>
-      <div className="container">
+      <Container>
         <Header />
-        <RecentlyPlayed />
-      </div>
+        <RecentlyPlayedContainer />
+      </Container>
+      <Player />
     </HomeContainer>
   );
 };

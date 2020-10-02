@@ -3,10 +3,7 @@ import axios from "axios";
 
 import MusicDataActionTypes from "./music-data.types";
 
-import {
-  fetchMusicDataSuccess,
-  fetchMusicDataFailure,
-} from "./music-data.actions";
+import { fetchMusicDataSuccess } from "./music-data.actions";
 
 const headers = {
   "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
@@ -23,11 +20,18 @@ const getMusicData = (searchQuery) =>
     .catch((error) => error);
 
 export function* fetchMusicDataAsync({ payload }) {
+  const defaultData = {
+    data: { data: [] },
+  };
   try {
-    const data = yield call(getMusicData, payload);
-    yield put(fetchMusicDataSuccess(data));
+    if (payload.length) {
+      const data = yield call(getMusicData, payload);
+      yield put(fetchMusicDataSuccess(data));
+    } else {
+      yield put(fetchMusicDataSuccess(defaultData));
+    }
   } catch (error) {
-    yield put(fetchMusicDataFailure(error.message));
+    yield put(fetchMusicDataSuccess(defaultData));
   }
 }
 

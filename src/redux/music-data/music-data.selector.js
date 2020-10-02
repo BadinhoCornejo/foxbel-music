@@ -7,7 +7,7 @@ export const selectIsFetchingMusicData = createSelector(
   (musicData) => musicData.isFetching
 );
 
-export const selectMusicDataLoaded = createSelector(
+export const selectMusicDataCollections = createSelector(
   [selectMusicData],
   (musicData) => musicData.data
 );
